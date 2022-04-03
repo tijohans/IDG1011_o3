@@ -65,11 +65,16 @@ addItemBtn.addEventListener('click', () => {
 })
 
 modalCloseBtn.addEventListener('click', () => {
+    // Clears the content of the input field before closing the modal
+    userInput.value = '';
     modal.close();
 })
 
 confirmBtn.addEventListener('click', () => {
-    addListItem(userInput.value);
+    // Checks if the text field is empty or not using ternary operator
+    // Checking if value of userInput is true or false
+    // If userInput.value is empty it evaluates to false
+    userInput.value ? addListItem(userInput.value) : window.alert('Necessary text field empty');
 })
 
 // Adding an event listener to the whole list
@@ -92,6 +97,6 @@ itemList.addEventListener('click', e => {
     }
 
     if(listItem.classList[0] === 'btn--edit') {
-        console.log(listItem);
+        modal.showModal();
     }
 })
