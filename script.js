@@ -9,10 +9,14 @@ const modal = document.querySelector('.modal');
 const userInput = document.querySelector('#textInput');
 const itemList = document.querySelector('.item__list');
 
+const deleteBtns = document.querySelectorAll('.btn--delete');
+
 // -----  Functions  -----
 
-// Function for creating and appending list items
-// Uses the document.createElement to create the html elements, and then appends them to DOM
+/* 
+    Function for creating and appending list items
+    Uses the document.createElement to create the html elements, and then appends them to DOM
+ */
 const addListItem = input => {
     // Starts off by creating the li and the span.
     const liElem = document.createElement('li');
@@ -31,6 +35,10 @@ const addListItem = input => {
     // Sets the innerHTML of the buttons
     editBtnElem.innerHTML = 'edit';
     deleteBtnElem.innerHTML = 'delete';
+
+    // Adding class to each button
+    editBtnElem.classList.add('btn--edit')
+    deleteBtnElem.classList.add('btn--delete')
     
     // Appends the buttons to the li
     liElem.appendChild(editBtnElem);
@@ -47,6 +55,8 @@ const addListItem = input => {
 }
 
 
+
+
 // -----  Eventlisteners  -----
 
 // Buttons for opening and closing the modal
@@ -60,4 +70,28 @@ modalCloseBtn.addEventListener('click', () => {
 
 confirmBtn.addEventListener('click', () => {
     addListItem(userInput.value);
+})
+
+// Adding an event listener to the whole list
+// Checks which element is clicked by comparing the classlist of the element clicked, to the desired class
+itemList.addEventListener('click', e => {
+    // Setting the listItem to the target of the event
+    const listItem = e.target;
+
+    // First checks if user has pressed the delete button
+    if(listItem.classList[0] === 'btn--delete') {
+
+        // If the delete button was pressed, the user is prompted to confirm their action
+        // The window.confirm() method either returns true or false
+        // If it returns true the listitem is removed
+        if(window.confirm()) {
+            // Using parentElement because the current listItem variable is only the button element
+            // The parent element of the button is the whole list item, which we want to remove
+            listItem.parentElement.remove();
+        }
+    }
+
+    if(listItem.classList[0] === 'btn--edit') {
+        console.log(listItem);
+    }
 })

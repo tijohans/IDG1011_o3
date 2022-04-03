@@ -95,13 +95,13 @@ dialog {
     }
 }
 
-.item__list button:nth-child(2),
+.btn--edit,
 .btn--confirm {
     background-color: colors.$action-color-1;
     margin-left: 20px;
 }
 
-.item__list button:nth-child(3),
+.btn--delete,
 .btn--cancel {
     background-color: colors.$action-color-2;
 }
