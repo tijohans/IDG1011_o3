@@ -81,14 +81,18 @@ dialog input {
 }
 .item__list li {
   display: flex;
-  margin: 0 20px;
+  margin: 10px 20px;
+  padding-bottom: 5px;
   width: 300px;
+  border-bottom: 2px dashed #D4B483;
 }
 .item__list li span {
+  display: inherit;
   margin-right: auto;
   max-width: 20ch;
   word-wrap: break-word;
   word-break: break-word;
+  align-items: center;
 }
 
 .btn--edit,

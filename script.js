@@ -12,8 +12,6 @@ const modal = document.querySelector('.modal');
 const userInput = document.querySelector('#textInput');
 const itemList = document.querySelector('.item__list');
 
-const deleteBtns = document.querySelectorAll('.btn--delete');
-
 // Creating a buffer to hold the event target that has been clicked
 // Is explained more thoroughly at the bottom in the itemList event listener
 let editBuffer = ' ';  
