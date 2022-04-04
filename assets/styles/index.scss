@@ -96,7 +96,8 @@ dialog {
 }
 
 .btn--edit,
-.btn--confirm {
+.btn--confirm--add,
+.btn--confirm--edit {
     background-color: colors.$action-color-1;
     margin-left: 20px;
 }
@@ -104,4 +105,13 @@ dialog {
 .btn--delete,
 .btn--cancel {
     background-color: colors.$action-color-2;
+}
+
+.btn--confirm--add, 
+.btn--confirm--edit{
+    display: none;
+}
+
+.show {
+    display: inline-block;
 }

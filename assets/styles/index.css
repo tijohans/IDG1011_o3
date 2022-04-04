@@ -92,7 +92,8 @@ dialog input {
 }
 
 .btn--edit,
-.btn--confirm {
+.btn--confirm--add,
+.btn--confirm--edit {
   background-color: #48A9A6;
   margin-left: 20px;
 }
@@ -100,4 +101,13 @@ dialog input {
 .btn--delete,
 .btn--cancel {
   background-color: #C1666B;
+}
+
+.btn--confirm--add,
+.btn--confirm--edit {
+  display: none;
+}
+
+.show {
+  display: inline-block;
 }/*# sourceMappingURL=index.css.map */
