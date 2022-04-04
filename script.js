@@ -5,6 +5,8 @@ const modalCloseBtn = document.querySelector('.btn--cancel')
 const confirmAddBtn = document.querySelector('.btn--confirm--add')
 const confirmEditBtn = document.querySelector('.btn--confirm--edit');
 
+/* By using a modal in the form of the dialog element, it provides better accessibility,
+and allows for the user to press the escape key to close it without having to do any extra */
 const modal = document.querySelector('.modal');
 
 const userInput = document.querySelector('#textInput');
@@ -42,7 +44,7 @@ const addListItem = input => {
     editBtnElem.innerHTML = 'edit';
     deleteBtnElem.innerHTML = 'delete';
 
-    // Adding class to each button
+    // Adding class to each button for selection and styling
     editBtnElem.classList.add('btn--edit')
     deleteBtnElem.classList.add('btn--delete')
 
@@ -104,6 +106,8 @@ confirmAddBtn.addEventListener('click', () => {
 })
 
 // * Implementation of task 1.2a, Confirm button for editing an item
+// * I chose to make the input box appear as a modal on the screen rather than underneath the list because of better accessibility,
+// * and so that when there are many items in the list the input field is just as easy to see
 confirmEditBtn.addEventListener('click', () => {
     // Sets the innerHTML of the event target buffer to be the value of userInput)
     if(userInput.value) {
@@ -115,7 +119,6 @@ confirmEditBtn.addEventListener('click', () => {
         window.alert('Necessary text field empty');
     }
 })
-
 
 
 /* 
