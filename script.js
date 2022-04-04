@@ -16,7 +16,7 @@ const deleteBtns = document.querySelectorAll('.btn--delete');
 
 // Creating a buffer to hold the event target that has been clicked
 // Is explained more thoroughly at the bottom in the itemList event listener
-let editBuffer = ' ';
+let editBuffer = ' ';  
 
 // -----  Functions  -----
 
@@ -129,7 +129,7 @@ confirmEditBtn.addEventListener('click', () => {
 
     The reason I chose to add an eventListener to the whole list instead of each button is because,
     it would save me the trouble of adding an eventListener each time a new item is added to the list
-    Now I just check which class the pressed element has and then compares it to the desired one
+    Now I just check which class the pressed element has, and then compares it to the desired one
 */
 itemList.addEventListener('click', e => {
     // Setting the listItem to the target of the event
