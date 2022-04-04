@@ -17,6 +17,7 @@ const deleteBtns = document.querySelectorAll('.btn--delete');
     Function for creating and appending list items
     Uses the document.createElement to create the html elements, and then appends them to DOM
  */
+// * Implementation of task 2.1, Add Item to list
 const addListItem = input => {
     // Starts off by creating the li and the span.
     const liElem = document.createElement('li');
@@ -73,9 +74,12 @@ modalCloseBtn.addEventListener('click', () => {
 confirmBtn.addEventListener('click', () => {
     // Checks if the text field is empty or not using ternary operator
     // Checking if value of userInput is true or false
-    // If userInput.value is empty it evaluates to false
+    // If userInput.value is empty it warns the user that a necessary text field is empty
+    // If it evaluates to true the addListItem function is called with userInput.value as an argument
     userInput.value ? addListItem(userInput.value) : window.alert('Necessary text field empty');
 })
+
+
 
 // Adding an event listener to the whole list
 // Checks which element is clicked by comparing the classlist of the element clicked, to the desired class
@@ -83,12 +87,15 @@ itemList.addEventListener('click', e => {
     // Setting the listItem to the target of the event
     const listItem = e.target;
 
+
+    // * Implementation of task 1.1, Delete button
     // First checks if user has pressed the delete button
     if(listItem.classList[0] === 'btn--delete') {
 
         // If the delete button was pressed, the user is prompted to confirm their action
         // The window.confirm() method either returns true or false
         // If it returns true the listitem is removed
+        // * Implementation of task 1.1a, Confirm if the user wants to remove the item
         if(window.confirm()) {
             // Using parentElement because the current listItem variable is only the button element
             // The parent element of the button is the whole list item, which we want to remove
@@ -97,6 +104,8 @@ itemList.addEventListener('click', e => {
     }
 
     if(listItem.classList[0] === 'btn--edit') {
+
+
         modal.showModal();
     }
 })
