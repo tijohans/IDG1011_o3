@@ -92,7 +92,6 @@ modalCloseBtn.addEventListener('click', () => {
 
 // * Implementation of task 2.1a, Confirm button for adding an item
 confirmAddBtn.addEventListener('click', () => {
-    // Checks if the text field is empty or not using ternary operator
     // Checking if value of userInput is true or false
     // If userInput.value is empty it warns the user that a necessary text field is empty
     // If it evaluates to true the addListItem function is called with userInput.value as an argument
@@ -112,10 +111,15 @@ confirmEditBtn.addEventListener('click', () => {
     // Sets the innerHTML of the event target buffer to be the value of userInput)
     if(userInput.value) {
         editBuffer.innerHTML = userInput.value;
-        modal.close();
-        userInput.value = '';
+        modal.close(); // Closes modal 
+
+        // Resets the value of userInput so the text field is empty 
+        userInput.value = ''; 
+
+        // Removes the editConfirmButton from modal
         confirmEditBtn.classList.remove('show');
     } else {
+        // If the text field is empty the user gets prompted to fill it in
         window.alert('Necessary text field empty');
     }
 })
