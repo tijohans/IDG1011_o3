@@ -5,8 +5,17 @@ const modalCloseBtn = document.querySelector('.btn--cancel')
 const confirmAddBtn = document.querySelector('.btn--confirm--add')
 const confirmEditBtn = document.querySelector('.btn--confirm--edit');
 
-/* By using a modal in the form of the dialog element, it provides better accessibility,
-and allows for the user to press the escape key to close it without having to do any extra */
+/*
+    By using a modal in the form of the dialog element it allows 
+    for the user to press the escape key to close it without having to do any extra.
+    By using a modal instead of showing the input beneath the list, the input will alway be visible on the screen,
+    when the user presses either the edit button or the add button
+
+  * NOTE:   The dialog element is still experimental and is not supported in all browsers.
+            The reason I chose to use this element without any polyfill is because this is 
+            an obligatory assignment and is not going to be up for public use.
+            https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+*/
 const modal = document.querySelector('.modal');
 
 const userInput = document.querySelector('#textInput');
